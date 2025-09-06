@@ -142,8 +142,7 @@ function App() {
               Movie Recommendation System
             </h3>
             <p className="text-gray-600 mb-6">
-              Built a movie recommendation system using Python and Flask. The backend fetches movie details and similar movie suggestions from the TMDb API, and the frontend displays recommendations based on user input. Users can search for a movie and instantly see the original movie along with related suggestions, complete with posters, genres, and overviews.
-              Technologies: Python, Flask, Requests, React, JavaScript, TMDb API, JSON
+              Built a movie recommendation system using Python and Flask.Technologies: Python, Flask, Requests, React, JavaScript, TMDb API, JSON
             </p>
             <div className="flex gap-4">
               <a
