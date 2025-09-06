@@ -98,6 +98,7 @@ function App() {
           </motion.div>
         </div>
       </section>
+<h1 className="text-5xl text-red-600 text-center">🔥 Projects Section Starts Here 🔥</h1>
 
       {/* Projects Section */}
       <section id="projects" className="min-h-screen bg-gray-200 py-16 px-6">
@@ -106,26 +107,55 @@ function App() {
         </h2>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {/* Project Card 2 */}
+          {/* Project Card 1 - Stock Market Analysis */}
           <motion.div
-            className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition"
+            className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition h-full"
             whileHover={{ scale: 1.05 }}
           >
             <h3 className="text-2xl font-semibold mb-2 text-green-600">
               Stock Market Analysis
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-6">
               Analyzed stock trends using Python, Pandas, and Matplotlib to identify
               patterns and insights.
             </p>
-            <a
-              href="https://github.com/Avishkar1121/stock_analysis"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-500 font-medium hover:underline"
-            >
-              🔗 View on GitHub
-            </a>
+            <div className="flex gap-4">
+              <a
+                href="https://github.com/Avishkar1121/stock_analysis"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+              >
+                GitHub
+              </a>
+             
+              
+            </div>
+          </motion.div>
+
+          {/* Project Card 2 - Movie Recommendation System */}
+          <motion.div
+            className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition h-full"
+            whileHover={{ scale: 1.05 }}
+          >
+            <h3 className="text-2xl font-semibold mb-2 text-blue-600">
+              Movie Recommendation System
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Built a recommendation system using Python, Pandas, and cosine similarity
+              to suggest movies based on user input.
+            </p>
+            <div className="flex gap-4">
+              <a
+                href="https://github.com/Avishkar1121/movie_recommendation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+              >
+                GitHub
+              </a>
+              
+            </div>
           </motion.div>
         </div>
       </section>
@@ -141,16 +171,38 @@ function App() {
           {/* Contact Details */}
           <div className="flex flex-col gap-4 text-gray-800">
             <p className="text-lg">
-              <span role="img" aria-label="email">📧</span> Email: <a href="mailto:avishkarghosalkar4956@gmail.com" className="text-blue-600 hover:underline">avishkarghosalkar4956@gmail.com</a>
+              <span role="img" aria-label="email">📧</span> Email:{" "}
+              <a href="mailto:avishkarghosalkar4956@gmail.com" className="text-blue-600 hover:underline">
+                avishkarghosalkar4956@gmail.com
+              </a>
             </p>
             <p className="text-lg">
-              <span role="img" aria-label="phone">📞</span> Phone: <a href="tel:+918180033311" className="text-blue-600 hover:underline">+91 81800 33311</a>
+              <span role="img" aria-label="phone">📞</span> Phone:{" "}
+              <a href="tel:+918180033311" className="text-blue-600 hover:underline">
+                +91 81800 33311
+              </a>
             </p>
             <p className="text-lg">
-              <span role="img" aria-label="linkedin">💼</span> LinkedIn: <a href="https://www.linkedin.com/in/avishkar-ghosalkar-b02b2926b" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">linkedin.com/in/avishkar-ghosalkar-b02b2926b</a>
+              <span role="img" aria-label="linkedin">💼</span> LinkedIn:{" "}
+              <a
+                href="https://www.linkedin.com/in/avishkar-ghosalkar-b02b2926b"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                linkedin.com/in/avishkar-ghosalkar-b02b2926b
+              </a>
             </p>
             <p className="text-lg">
-              <span role="img" aria-label="github">🐙</span> GitHub: <a href="https://github.com/Avishkar1121" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">github.com/Avishkar1121</a>
+              <span role="img" aria-label="github">🐙</span> GitHub:{" "}
+              <a
+                href="https://github.com/Avishkar1121"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                github.com/Avishkar1121
+              </a>
             </p>
           </div>
         </div>
@@ -160,3 +212,4 @@ function App() {
 }
 
 export default App;
+
