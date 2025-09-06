@@ -1,214 +1,239 @@
 import profilePic from "./assets/me.jpg";
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
 
 function App() {
   return (
-    <div className="font-sans scroll-smooth">
+    <div className="font-sans scroll-smooth bg-gray-900 text-white">
+
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <nav className="fixed top-0 left-0 w-full bg-gray-800 shadow-md z-50">
         <ul className="flex justify-center space-x-8 py-4">
-          <li><a href="#home" className="text-gray-700 hover:text-blue-500">Home</a></li>
-          <li><a href="#about" className="text-gray-700 hover:text-blue-500">About</a></li>
-          <li><a href="#projects" className="text-gray-700 hover:text-blue-500">Projects</a></li>
-          <li><a href="#contact" className="text-gray-700 hover:text-blue-500">Contact</a></li>
+          {["Home", "About", "Projects", "Contact"].map((link) => (
+            <li key={link}>
+              <a
+                href={`#${link.toLowerCase()}`}
+                className="text-gray-300 hover:text-orange-400 transition-colors"
+              >
+                {link}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
+{/* Home + About Section */}
+<section
+  id="home"
+  className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black text-center relative overflow-hidden py-16 px-8"
+>
+  {/* Hero */}
+  <motion.h1
+    className="text-5xl md:text-6xl font-bold mb-6 text-white"
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+  >
+    Hi, I’m <span className="text-orange-400">Avishkar</span>
+  </motion.h1>
 
-      {/* Hero Section */}
-      <section
-        id="home"
-        className="h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center"
-      >
-        <motion.h1
-          className="text-6xl font-bold mb-4"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Hi, I’m <span className="text-yellow-300">Avishkar</span>
-        </motion.h1>
+  <motion.p
+    className="text-xl md:text-2xl mb-10 text-gray-200"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.5, duration: 1 }}
+  >
+    Aspiring Data Scientist & AI Developer
+  </motion.p>
 
-        <motion.p
-          className="text-2xl mb-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        >
-          Aspiring Data Scientist & AI Developer
-        </motion.p>
+  <motion.a
+    href="#projects"
+    className="px-8 py-4 bg-orange-400 text-black rounded-full font-semibold hover:bg-yellow-300 transition"
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    View My Work
+  </motion.a>
 
-        <motion.a
-          href="#projects"
-          className="px-6 py-3 bg-yellow-400 text-black rounded-full font-semibold hover:bg-yellow-300 transition"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          View My Work
-        </motion.a>
-      </section>
+  {/* About inside Home */}
+  <motion.div
+    className="mt-16 flex flex-col md:flex-row items-center justify-center bg-gray-800 bg-opacity-90 rounded-3xl p-24 w-full max-w-7xl shadow-xl"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.8, duration: 1 }}
+  >
+    <motion.img
+      src={profilePic}
+      alt="Avishkar"
+      className="w-56 h-56 md:w-64 md:h-64 rounded-full shadow-2xl mb-8 md:mb-0 md:mr-16"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1 }}
+    />
 
-      {/* About Section */}
-      <section
-        id="about"
-        className="h-screen flex flex-col md:flex-row items-center justify-center bg-gray-100 px-6"
-      >
-        {/* Image */}
-        <motion.img
-          src={profilePic}
-          alt="Avishkar"
-          className="w-48 h-48 rounded-full shadow-lg mb-6 md:mb-0 md:mr-12"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        />
+    <div className="text-center md:text-left text-gray-200 max-w-xl md:max-w-2xl">
+      <h2 className="text-4xl md:text-5xl font-bold mb-16">About Me</h2>
+      <p className="text-lg md:text-xl mb-12">
+        I am a recent graduate in <span className="font-semibold">Electronics and Telecommunication Engineering</span> with a strong interest in <span className="font-semibold">Data Science</span> and <span className="font-semibold">AI Development</span>.  
+        I love solving real-world problems using innovative technology and have hands-on experience with Python, Machine Learning, and Deep Learning projects.
+      </p>
 
-        {/* Text */}
-        <div className="max-w-xl text-center md:text-left">
-          <motion.h2
-            className="text-4xl font-bold mb-4 text-gray-800"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            About Me
-          </motion.h2>
+      {/* Skills */}
+      <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+        <span className="px-5 py-3 bg-blue-100 text-blue-700 rounded-full text-base md:text-sm font-medium">Python</span>
+        <span className="px-5 py-3 bg-green-100 text-green-700 rounded-full text-base md:text-sm font-medium">TensorFlow</span>
+        <span className="px-5 py-3 bg-yellow-100 text-yellow-700 rounded-full text-base md:text-sm font-medium">Machine Learning</span>
+        <span className="px-5 py-3 bg-purple-100 text-purple-700 rounded-full text-base md:text-sm font-medium">Data Analysis</span>
+        <span className="px-5 py-3 bg-red-100 text-red-700 rounded-full text-base md:text-sm font-medium">React</span>
+      </div>
+    </div>
+  </motion.div>
+</section>
+{/* Education Section */}
+<section
+  id="education"
+  className="bg-gray-800 py-16 px-6 flex flex-col items-center"
+>
+  <motion.h2
+    className="text-4xl font-bold mb-12 text-orange-400"
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+  >
+    Education
+  </motion.h2>
 
-          <motion.p
-            className="text-lg text-gray-600 mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 1 }}
-          >
-            I am a recent graduate in <span className="font-semibold">Electronics and Telecommunication Engineering</span> with a strong interest in <span className="font-semibold">Data Science</span> and <span className="font-semibold">AI Development</span>.  
-            I love solving real-world problems through innovative technology and have hands-on experience with Python, Machine Learning, and Deep Learning projects.
-          </motion.p>
+  <motion.div
+    className="bg-gray-900 rounded-2xl shadow-lg p-8 w-full md:w-3/4 max-w-4xl"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.3, duration: 1 }}
+  >
+    <div className="space-y-4 text-green-400">
+      <div>
+        <h3 className="text-xl font-semibold">Bachelor of Engineering - EXTC</h3>
+        <p className="text-gray-300">Vidyalankar Institue of Technology (Mumbai University) - 2025</p>
+      </div>
+      <div>
+        <h3 className="text-xl font-semibold">Honours And Minors - AI & ML</h3>
+        <p className="text-gray-300"> 2025</p>
+      </div>
+     
+    </div>
+  </motion.div>
+</section>
 
-          {/* Skills List */}
-          <motion.div
-            className="flex flex-wrap gap-3 justify-center md:justify-start"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 1 }}
-          >
-            <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Python</span>
-            <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">TensorFlow</span>
-            <span className="px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">Machine Learning</span>
-            <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Data Analysis</span>
-            <span className="px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-medium">React</span>
-          </motion.div>
-        </div>
-      </section>
 
 
       {/* Projects Section */}
-      <section id="projects" className="min-h-screen bg-gray-200 py-16 px-6">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+      <section id="projects" className="min-h-screen bg-gray-900 py-24 px-6 md:px-20">
+        <h2 className="text-4xl font-bold text-center mb-12 text-orange-400">
           Projects
         </h2>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {/* Project Card 1 - Stock Market Analysis */}
+          {/* Project Card - Stock Market */}
           <motion.div
-            className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition h-full"
+            className="bg-gray-800 rounded-2xl shadow-xl p-6 hover:shadow-2xl transition transform hover:scale-105 h-full flex flex-col justify-between"
             whileHover={{ scale: 1.05 }}
           >
-            <h3 className="text-2xl font-semibold mb-2 text-green-600">
-              Stock Market Analysis
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Analyzed stock trends using Python, Pandas, and Matplotlib to identify
-              patterns and insights.
+            <h3 className="text-2xl font-semibold mb-2 text-green-400">Stock Market Analysis</h3>
+            <p className="text-gray-300 mb-6">
+              Analyzed stock trends using Python, Pandas, and Matplotlib to identify patterns and insights.
             </p>
-            <div className="flex gap-4">
-              <a
-                href="https://github.com/Avishkar1121/stock_analysis"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
-              >
-                GitHub
-              </a>
-             
-              
-            </div>
+            <a
+              href="https://github.com/Avishkar1121/stock_analysis"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition w-max"
+            >
+              GitHub
+            </a>
           </motion.div>
 
-          {/* Project Card 2 - Movie Recommendation System */}
+          {/* Project Card - Movie Recommendation */}
           <motion.div
-            className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition h-full"
+            className="bg-gray-800 rounded-2xl shadow-xl p-6 hover:shadow-2xl transition transform hover:scale-105 h-full flex flex-col justify-between"
             whileHover={{ scale: 1.05 }}
           >
-            <h3 className="text-2xl font-semibold mb-2 text-blue-600">
-              Movie Recommendation System
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Built a movie recommendation system using Python and Flask.Technologies: Python, Flask, Requests, React, JavaScript, TMDb API, JSON
+            <h3 className="text-2xl font-semibold mb-2 text-blue-400">Movie Recommendation System</h3>
+            <p className="text-gray-300 mb-6">
+              Built a movie recommendation system using Python, Flask, and TMDb API. Frontend dynamically displays movies with React.
             </p>
-            <div className="flex gap-4">
-              <a
-                href="https://github.com/Avishkar1121/movie_recommendation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-              >
-                GitHub
-              </a>
-              
-            </div>
+            <a
+              href="https://github.com/Avishkar1121/movie_recommendation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition w-max"
+            >
+              GitHub
+            </a>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section
-        id="contact"
-        className="min-h-screen flex flex-col items-center justify-center bg-gray-300 px-6"
-      >
-        <h2 className="text-4xl font-semibold mb-8">Contact Me</h2>
+ {/* Contact Section */}
+<section
+  id="contact"
+  className="min-h-screen flex flex-col items-center justify-center bg-gray-800 px-6 md:px-20 py-24"
+>
+  <h2 className="text-4xl font-semibold mb-8 text-orange-400">Contact Me</h2>
 
-        <div className="flex flex-col md:flex-row gap-12">
-          {/* Contact Details */}
-          <div className="flex flex-col gap-4 text-gray-800">
-            <p className="text-lg">
-              <span role="img" aria-label="email">📧</span> Email:{" "}
-              <a href="mailto:avishkarghosalkar4956@gmail.com" className="text-blue-600 hover:underline">
-                avishkarghosalkar4956@gmail.com
-              </a>
-            </p>
-            <p className="text-lg">
-              <span role="img" aria-label="phone">📞</span> Phone:{" "}
-              <a href="tel:+918180033311" className="text-blue-600 hover:underline">
-                +91 81800 33311
-              </a>
-            </p>
-            <p className="text-lg">
-              <span role="img" aria-label="linkedin">💼</span> LinkedIn:{" "}
-              <a
-                href="https://www.linkedin.com/in/avishkar-ghosalkar-b02b2926b"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                linkedin.com/in/avishkar-ghosalkar-b02b2926b
-              </a>
-            </p>
-            <p className="text-lg">
-              <span role="img" aria-label="github">🐙</span> GitHub:{" "}
-              <a
-                href="https://github.com/Avishkar1121"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                github.com/Avishkar1121
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+  <div className="flex flex-col md:flex-row gap-12">
+    <div className="flex flex-col gap-6 text-gray-300">
+      
+      {/* Email */}
+
+<p>
+  <span className="material-symbols-outlined text-red-500 align-middle mr-2">
+    mail
+  </span>
+  Email:{" "}
+  <a
+    href="mailto:avishkarghosalkar4956@gmail.com"
+    className="text-blue-400 hover:underline"
+  >
+    avishkarghosalkar4956@gmail.com
+  </a>
+</p>
+
+
+<p className="flex items-center gap-2">
+  <FaPhone className="text-green-600 text-xl" />
+  <a href="tel:+918180033311" className="hover:underline">
+    +91 81800 33311
+  </a>
+</p>
+
+<p className="flex items-center gap-2">
+  <FaLinkedin className="text-[#0077B5] text-xl" />
+  <a
+    href="https://www.linkedin.com/in/avishkar-ghosalkar-b02b2926b"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:underline"
+  >
+    linkedin.com/in/avishkar-ghosalkar-b02b2926b
+  </a>
+</p>
+
+<p className="flex items-center gap-2">
+  <FaGithub className="text-black text-xl" />
+  <a
+    href="https://github.com/Avishkar1121"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:underline"
+  >
+    github.com/Avishkar1121
+  </a>
+</p>
+
+    </div>
+  </div>
+</section>
+
     </div>
   );
 }
 
 export default App;
-
