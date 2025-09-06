@@ -98,7 +98,7 @@ function App() {
           </motion.div>
         </div>
       </section>
-<h1 className="text-5xl text-red-600 text-center">🔥 Projects Section Starts Here 🔥</h1>
+
 
       {/* Projects Section */}
       <section id="projects" className="min-h-screen bg-gray-200 py-16 px-6">
