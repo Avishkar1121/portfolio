@@ -20,7 +20,7 @@ export const experience = [
     company: "IIT Bombay, Mumbai",
     period: "Oct 2025 - Present",
     points: [
-      "Devloped RESTful APIs using FastAPI, implementing CRUD operations and integrating with PostgreSQL for efficient data management.",
+      "Developed RESTful APIs using FastAPI, implementing CRUD operations and integrating with PostgreSQL for efficient data management.",
       "Built React frontend features using Hooks for state management and API request handling, supporting scalable frontend-backend integration.",
       "Designed relational database schemas to support application workflows, focusing on table structure, relationships, and normalization in line with standard software engineering practices.",
       "Collaborated with senior developers and researchers on backend-frontend interaction, API request/response flow, and error handling, contributing to secure and reliable feature delivery.",
@@ -95,7 +95,7 @@ export const contacts = [
   },
   {
     label: "LinkedIn",
-    value: "avishkar-ghosalkar-b02b2926b",
+    value: "avishkar-ghosalkar-5096bb442",
     href: "https://www.linkedin.com/in/avishkar-ghosalkar-5096bb442",
     Icon: FaLinkedin,
     color: "text-sky-400",
