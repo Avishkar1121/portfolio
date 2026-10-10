@@ -96,7 +96,7 @@ export const contacts = [
   {
     label: "LinkedIn",
     value: "avishkar-ghosalkar-b02b2926b",
-    href: "https://www.linkedin.com/in/avishkar-ghosalkar-b02b2926b",
+    href: "https://www.linkedin.com/in/avishkar-ghosalkar-5096bb442",
     Icon: FaLinkedin,
     color: "text-sky-400",
     external: true,
