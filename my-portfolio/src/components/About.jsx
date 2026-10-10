@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profilePic from "../assets/Avishkar.PNG";
+import profilePic from "../assets/Avishkar.png";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { profile, skills, stats } from "../data/portfolio";
